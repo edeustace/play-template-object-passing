@@ -1,0 +1,16 @@
+@(response:String)(implicit request : Request[AnyContent])
+<h1>@response</h1>
+@requestInfo(request)
+
+<!-- i'd rather not have to: 
+  - add request as an implicit
+  - pass it to every template that needs it
+
+
+  eg: 
+  @(response:String)
+  <h1>@response</h1>
+  @requestInfo()
+
+  aka the fact that it is implicit in the original context should pass it to every template that is invoked from the first one.
+-->
